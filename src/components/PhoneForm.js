@@ -4,7 +4,7 @@ class PhoneForm extends Component {
 
     state = {
         name: '',
-        number: ''
+        phone: ''
     }
 
     handelChange = (e) => {
@@ -17,22 +17,27 @@ class PhoneForm extends Component {
         this.props.onCreate(this.state)
         this.setState({
             name: '',
-            number: ''
+            phone: ''
         })
     }
 
     render(){
+         const style = {
+            padding: '8px',
+            margin: '0 auto',
+            width: '22vw',
+        }
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} style = {style}>
                 <input 
                 value={this.state.name}
                 onChange={this.handelChange}
                 name='name'
                 ></input>
                 <input 
-                value={this.state.number}
+                value={this.state.phone}
                 onChange={this.handelChange}
-                name='number'
+                name='phone'
                 ></input>
                 <button type='submit'>Submit</button>
             </form>
